@@ -3,7 +3,7 @@ name: Log Timestamp
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'  # Optional: runs every hour
+    - cron: '0 * * * *'  # Optional: runs hourly
 
 jobs:
   log-time:
@@ -13,6 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Override remote origin with PAT
+        env:
+          TOKEN: ${{ secrets.PAT_TOKENA }}
+        run: |
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git
+
       - name: Set up Git config
         run: |
           git config --global user.name "GitHub Actions"
@@ -21,12 +27,6 @@ jobs:
       - name: Append timestamp to log.txt
         run: |
           echo "Run at $(date -u)" >> log.txt
-
-      - name: Set remote using PAT
-        env:
-          TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: |
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git
 
       - name: Commit and push changes
         run: |
