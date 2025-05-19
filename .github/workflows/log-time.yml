@@ -1,0 +1,35 @@
+name: Log Timestamp
+
+on:
+  workflow_dispatch:  # Allows manual run
+  schedule:
+    - cron: '0 * * * *'  # Optional: Runs every hour
+
+jobs:
+  log-time:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Append current date and time to log.txt
+        run: |
+          echo "Run at $(date -u)" >> log.txt
+
+      - name: Set remote with PAT
+        env:
+          TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git
+
+      - name: Commit and push changes
+        run: |
+          git add log.txt
+          git commit -m "Logged time: $(date -u)" || echo "No changes to commit"
+          git push origin HEAD:main
