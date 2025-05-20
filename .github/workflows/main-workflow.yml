@@ -1,0 +1,12 @@
+# .github/workflows/main-workflow.yml
+name: Main Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-hello-worlda:
+    uses: ./.github/workflows/a.yml
+
+  call-hello-worldb:
+    uses: ./.github/workflows/b.yml
