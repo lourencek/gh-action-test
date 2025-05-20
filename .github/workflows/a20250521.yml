@@ -1,0 +1,15 @@
+# .github/workflows/a.yml
+name: A Workflow
+
+on:
+  workflow_call:
+    inputs:
+      message:
+        required: true
+        type: string
+
+jobs:
+  hello-world-a:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Message from main: ${{ inputs.message }}"
