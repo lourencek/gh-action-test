@@ -1,0 +1,15 @@
+# .github/workflows/klm.yml
+name: KLM Workflow
+
+on:
+  workflow_call:
+    inputs:
+      message:
+        required: true
+        type: string
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "KLM received message: ${{ inputs.message }}"
