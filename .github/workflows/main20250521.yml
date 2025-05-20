@@ -11,11 +11,13 @@ on:
 
 jobs:
   call-hello-worlda:
-    uses: your-org-or-user/your-repo/.github/workflows/a.yml@main
+    uses: ./.github/workflows/a20250521.yml
     with:
       message: ${{ inputs.customMessage }}
 
   call-hello-worldb:
-    uses: your-org-or-user/your-repo/.github/workflows/b.yml@main
+    uses: ./.github/workflows/b20250521.yml
     with:
       message: ${{ inputs.customMessage }}
+
+    
