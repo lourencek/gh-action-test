@@ -1,0 +1,21 @@
+# .github/workflows/main20250521.yml
+name: Main Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      customMessage:
+        description: 'Custom message to pass'
+        required: true
+        type: string
+
+jobs:
+  call-hello-worlda:
+    uses: your-org-or-user/your-repo/.github/workflows/a.yml@main
+    with:
+      message: ${{ inputs.customMessage }}
+
+  call-hello-worldb:
+    uses: your-org-or-user/your-repo/.github/workflows/b.yml@main
+    with:
+      message: ${{ inputs.customMessage }}
