@@ -1,0 +1,20 @@
+name: Hello Name Manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Name to greet'
+        required: true
+        default: 'World'
+
+jobs:
+  hello_user:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Hello to the user
+        run: echo "Hello, ${{ github.event.inputs.username }}!"
+
+      - name: Print Date and Time
+        run: date
