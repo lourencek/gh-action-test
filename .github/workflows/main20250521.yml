@@ -1,23 +1,17 @@
-# .github/workflows/main20250521.yml
 name: Main Workflow 20250521
-
-on:
+'on':
   workflow_dispatch:
     inputs:
       customMessage:
-        description: 'Custom message to pass'
+        description: Custom message to pass
         required: true
         type: string
-
 jobs:
   call-hello-worlda:
-    uses: lourencek/gh-action-test/.github/workflows/a20250521.yml@main  
+    uses: lourencek/gh-action-test/.github/workflows/a20250521.yml@main
     with:
-      message: ${{ inputs.customMessage }}
-
+      message: '${{ inputs.customMessage }}'
   call-hello-worldb:
-    uses: lourencek/gh-action-test/.github/workflows/b20250521.yml@main  
+    uses: lourencek/gh-action-test/.github/workflows/b20250521.yml@main
     with:
-      message: ${{ inputs.customMessage }}
-
-    
+      message: '${{ inputs.customMessage }}'
