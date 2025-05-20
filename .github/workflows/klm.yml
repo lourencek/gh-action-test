@@ -12,4 +12,4 @@ jobs:
   print-message:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "KLM received message:${{ inputs.message }}"
+      - run: echo "KLM received message:${{ inputs.message || 'World' }}"
