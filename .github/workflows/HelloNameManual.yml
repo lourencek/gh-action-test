@@ -1,12 +1,13 @@
 name: Hello Name Manual
 
 on:
-  workflow_dispatch:
-    inputs:
-      username:
-        description: 'Name to greet'
-        required: true
-        default: 'World'
+   workflow_call:
+#  workflow_dispatch:
+#    inputs:
+#      username:
+#        description: 'Name to greet'
+#        required: true
+#        default: 'World'
 
 jobs:
   hello_user:
