@@ -1,0 +1,15 @@
+# .github/workflows/hello-world.yml
+name: Hello World B
+
+on:
+  workflow_call:
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, world! B"
+
+      - name: Print Date and Time
+        run: date
