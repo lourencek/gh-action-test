@@ -1,12 +1,13 @@
 name: Name of Town
 
 on:
-  workflow_dispatch:
-    inputs:
-      townname:
-        description: 'Name of Town'
-        required: true
-        default: 'Auckland'
+   workflow_call:
+#  workflow_dispatch:
+#    inputs:
+#      townname:
+#        description: 'Name of Town'
+#        required: true
+#        default: 'Auckland'
 
 jobs:
   hello_user:
