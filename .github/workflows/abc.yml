@@ -6,20 +6,20 @@ on:
     inputs:
       messageForKLM:
         description: 'Message to send to KLM'
-        required: true
+        required: false
         type: string
       messageForXYZ:
         description: 'Message to send to XYZ'
-        required: true
+        required: false
         type: string
 
 jobs:
   call-klm:
     uses: lourencek/gh-action-test/.github/workflows/klm.yml@main
     with:
-      message: ${{ inputs.messageForKLM }}
+      message: ${{ inputs.messageForKLM ||'klm default' }}
 
   call-xyz:
     uses: lourencek/gh-action-test/.github/workflows/xyz.yml@main
     with:
-      message: ${{ inputs.messageForXYZ }}
+      message: ${{ inputs.messageForXYZ||'xyz default'}}
