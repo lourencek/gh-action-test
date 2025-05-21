@@ -24,3 +24,4 @@ jobs:
     uses: lourencek/gh-action-test/.github/workflows/klm.yml@main
     with:
       message: ${{ inputs.messageForXYZ||'xyz defaulteee'}}
+      message2: ${{ inputs.messageForXYZ||'xyz defaul222222222222'}}      
