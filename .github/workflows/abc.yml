@@ -21,6 +21,6 @@ jobs:
       message2: ${{ inputs.messageForXYZ ||'klm dedae default' }}      
 
   call-xyz:
-    uses: lourencek/gh-action-test/.github/workflows/xyz.yml@main
+    uses: lourencek/gh-action-test/.github/workflows/klm.yml@main
     with:
-      message: ${{ inputs.messageForXYZ||'xyz default'}}
+      message: ${{ inputs.messageForXYZ||'xyz defaulteee'}}
