@@ -17,8 +17,8 @@ jobs:
   call-klm:
     uses: lourencek/gh-action-test/.github/workflows/klm.yml@main
     with:
-      message: ${{ inputs.messageForKLM ||'klm default' }}
-      message2: ${{ inputs.messageForXYZ ||'klm default' }}      
+      message: ${{ inputs.messageForKLM ||'klm blaa default' }}
+      message2: ${{ inputs.messageForXYZ ||'klm dedae default' }}      
 
   call-xyz:
     uses: lourencek/gh-action-test/.github/workflows/xyz.yml@main
