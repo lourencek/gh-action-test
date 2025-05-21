@@ -7,9 +7,14 @@ on:
       message:
         required: true
         type: string
+      message2:
+        required: true
+        type: string        
 
 jobs:
   print-message:
     runs-on: ubuntu-latest
     steps:
       - run: echo "KLM received message:${{ inputs.message || 'World' }}"
+      - run: echo "KLM received message:${{ inputs.message2 || 'World2' }}"      
+      
