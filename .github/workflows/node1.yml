@@ -1,0 +1,29 @@
+# .github/workflows/klm.yml
+name: sks Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        required: false
+        type: string
+      message2:
+        required: false
+        type: string
+      message3:
+        required: false
+        type: string
+      message4:
+        required: false
+        type: string   
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "KLM received message:${{ inputs.message }}"
+      - run: echo "KLM received message:${{ inputs.message2  }}"
+      - run: echo "KLM received message:${{ inputs.message3  }}"
+      - run: echo "KLM received message:${{ inputs.message4  }}"
+      
+      
