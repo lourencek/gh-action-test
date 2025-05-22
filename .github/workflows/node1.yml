@@ -2,7 +2,7 @@
 name: sks Workflow
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       message:
         required: false
