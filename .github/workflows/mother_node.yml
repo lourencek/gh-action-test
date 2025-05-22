@@ -1,0 +1,55 @@
+# .github/workflows/mother_node.yml
+name: Mother Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      messagea1:
+        description: 'Messagea1'
+        required: false
+        type: string
+      messageb1:
+        description: 'Messageb1'
+        required: false
+        type: string
+      messagec1:
+        description: 'Messagec1'
+        required: false
+        type: string        
+      messaged1:
+        description: 'Messaged1'
+        required: false
+        type: string
+      messagea2:
+        description: 'Messagea2'
+        required: false
+        type: string
+      messageb2:
+        description: 'Messageb2'
+        required: false
+        type: string
+      messagec2:
+        description: 'Messagec2'
+        required: false
+        type: string        
+      messaged2:
+        description: 'Messaged2'
+        required: false
+        type: string        
+        
+jobs:
+  call-node1a:
+    uses: lourencek/gh-action-test/.github/workflows/node1.yml@main
+    with:
+      message: ${{ inputs.messageForKLM ||'ma1t' }}
+      message2: ${{ inputs.messageForXYZ ||'mb1' }}
+      message3: ${{ inputs.messageForXYZ ||'mc1' }} 
+      message4: ${{ inputs.messageForXYZ ||'md1' }} 
+
+  call-node1b:
+    uses: lourencek/gh-action-test/.github/workflows/node1.yml@main
+    with:
+      message: ${{ inputs.messageForKLM ||'ma2' }}
+      message2: ${{ inputs.messageForXYZ ||'mb2' }}
+      message3: ${{ inputs.messageForXYZ ||'mc2' }} 
+      message4: ${{ inputs.messageForXYZ ||'md2' }}   
