@@ -1,0 +1,15 @@
+name: Schedule test1
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message to echo'
+        required: true
+        type: string
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo the message
+        run: echo "You entered:${{ inputs.message }}"
